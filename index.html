@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>To my fairy</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">Darling 闫~~</span><br />
+				<span class="space"/><span class="comments">满腹的话在此刻想对你讲，可是又不知从何将起</span><br />
+				<span class="space"/><span class="comments">是在春天认识你的，转眼夏天都要来到</span><br />
+				<span class="space"/><span class="comments">我是有多庆幸</span><br />
+				<span class="space"/><span class="comments">第一个遇到的是你</span><br />
+				<span class="space"/><span class="comments">我是有多愚钝</span><br />
+				<span class="space"/><span class="comments">总是想不到爱你的最好表达方式</span><br />
+				<span class="space"/>我喜欢一个人独处<br />
+				<span class="space"/>直到你走进我的心里,我只想和你在一起<br />
+				<span class="space"/>我不再喜欢独自一个人<br />
+				<span class="space"/>你可还记得初恋的那种悸动，初恋的那种荷尔蒙<br />
+				<span class="space"/>初恋，一个人内心世界的独白<br />
+				<span class="space"/>无人知晓<br />
+				<span class="space"/>初恋，一个人的兵荒马乱<br />
+				<span class="space"/>错综复杂<br />
+				<span class="space"/>没错，这就是现在的我<br />
+				<span class="space"/>你知道你的一句晚安<br />
+				<span class="space"/>曾给予我多大的幸福<br />
+				<span class="space"/>你知道你的一个拥抱<br />
+				<span class="space"/>曾给予我多少的温暖<br />
+				<span class="keyword">世事如书，趁着青春年少尚有余力<br />
+				<span class="space"/>就要去保护最美好的东西<br />
+				<span class="space"/>韶华易逝，青春难再。希望可以浪费在有趣的事上<br />
+				<span class="space"/>希望和你在一起，如果不可以<br />那我们就做个好基友<br/> 好吗？好的</span> <br />
+				<br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						闫姑娘，喜欢你
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u miss u<br/>
+						<div class="signature">- yours dalao旭</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 3, 8);
+		together.setHours(14);
+		together.setMinutes(30);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
